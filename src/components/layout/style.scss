@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.header {
+  border-bottom: 1px solid #3b2f2f;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 4px 25%;
+  .header-title-container {
+    .header-title {
+      font-size: 16px;
+    }
+  }
+  .header-search-container {
+    padding-top: 4px;
+    .header-search-form {
+      background-color: $colour2;
+      border: 1px solid black;
+      display: flex;
+      margin: 0 42px;
+      .open-search {
+        font-size: 11px;
+        margin: 0 4px;
+      }
+      .header-search-input {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        font-size: 11px;
+      }
+    }
+  }
+  .header-links-container {
+    .header-links {
+      display: flex;
+      justify-content: flex-end;
+      .header-link {
+        cursor: pointer;
+        margin: 0 6px;
+        i {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
