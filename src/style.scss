@@ -1,6 +1,22 @@
 @import "variables.scss";
 
 * {
+  color: $colour1;
   font-family: $font1;
   margin: 0;
+  text-decoration: none;
+}
+
+.app {
+  background-color: $colour2;
+  max-height: 100vh;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font2;
 }

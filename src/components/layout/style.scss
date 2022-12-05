@@ -1,0 +1,14 @@
+@import "../../variables.scss";
+
+.header {
+  padding: $padding1;
+  .header-content {
+    border-bottom: 1px solid $colour1;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.navbar {
+  display: flex;
+}
