@@ -10,7 +10,7 @@ const Header = ({ onSigninClick, onSignupClick, onNewClick }) => {
       <div className="header-content">
         <div className="header-title-box">
           <Link to="/">
-            <h1>StoryGram</h1>
+            <h1 className="header-title">StoryGram</h1>
           </Link>
         </div>
         <Navbar

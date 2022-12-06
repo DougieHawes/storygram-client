@@ -1,14 +1,38 @@
 @import "../../variables.scss";
 
 .header {
-  padding: $padding1;
+  margin: $padding1;
+  position: fixed;
+  width: 88%;
   .header-content {
     border-bottom: 1px solid $colour1;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 3px;
+    .header-title-box {
+      .header-title {
+        font-size: 42px;
+      }
+    }
   }
 }
 
 .navbar {
   display: flex;
+  .navbar-link {
+    cursor: pointer;
+    height: 42px;
+    margin-left: 6px;
+    padding-top: 6px;
+    text-align: center;
+    width: 42px;
+    font-size: 30px;
+  }
+  .navbar-link-circle {
+    background-color: $colour1;
+    border-radius: 50%;
+    * {
+      color: $colour2;
+    }
+  }
 }

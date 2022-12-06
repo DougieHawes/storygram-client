@@ -13,19 +13,24 @@ const Navbar = ({ onSigninClick, onSignupClick, onNewClick }) => {
     <nav className="navbar">
       {signedIn ? (
         <>
-          <div onClick={onNewClick}>
+          <div className="navbar-link" onClick={onNewClick}>
             <FaPenFancy />
           </div>
-          <div>
-            <Link to={`/dashboard/${42}`}>PROFILE</Link>
+          <div className="navbar-link navbar-link-circle">
+            <Link to={`/dashboard/${42}`}>
+              <FiUser />
+            </Link>
           </div>
         </>
       ) : (
         <>
-          <div onClick={onSignupClick}>
+          <div className="navbar-link" onClick={onSignupClick}>
             <FiUserPlus />
           </div>
-          <div onClick={onSigninClick}>
+          <div
+            className="navbar-link  navbar-link-circle"
+            onClick={onSigninClick}
+          >
             <FiUser />
           </div>
         </>

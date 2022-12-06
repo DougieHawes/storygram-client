@@ -12,37 +12,80 @@ import Dashboard from "./components/routes/private/Dashboard";
 import UpdateProfile from "./components/routes/private/UpdateProfile";
 
 import "./style.scss";
-import { Modal1 } from "./components/utils/modals";
+import {
+  SignupModal,
+  SigninModal,
+  NewPostModal,
+} from "./components/utils/modals";
 
 const App = () => {
   const [state, setState] = useState({
     showModal: false,
+    signupUser: false,
+    signinUser: false,
+    addPost: false,
   });
 
-  const toggleModal = () => {
-    setState({ showModal: !state.showModal });
-
-    console.log(state);
+  const openSignupModal = () => {
+    setState({
+      ...state,
+      showModal: true,
+      signupUser: true,
+    });
   };
 
-  const { showModal } = state;
+  const openSigninModal = () => {
+    setState({
+      ...state,
+      showModal: true,
+      signinUser: true,
+    });
+  };
+
+  const openNewpostModal = () => {
+    setState({
+      ...state,
+      showModal: true,
+      addPost: true,
+    });
+  };
+
+  const closeModal = () => {
+    setState({
+      showModal: false,
+      signupUser: false,
+      signinUser: false,
+      addPost: false,
+    });
+  };
+
+  const { showModal, signupUser, signinUser, addPost } = state;
 
   return (
     <div className="app">
       <Header
-        onSigninClick={toggleModal}
-        onSignupClick={toggleModal}
-        onNewClick={toggleModal}
+        onSignupClick={openSignupModal}
+        onSigninClick={openSigninModal}
+        onNewClick={openNewpostModal}
       />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/post/:id" element={<SinglePost />} />
-        <Route exact path="/profile/:id" element={<Profile />} />
-        {/* {private routes} */}
-        <Route exact path="/dashboard/:id" element={<Dashboard />} />
-        <Route exact path="/updateprofile/:id" element={<UpdateProfile />} />
-      </Routes>
-      {showModal && <Modal1 onCloseClick={toggleModal} />}
+      <div className="routes">
+        <Routes>
+          {/* public routes */}
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/post/:id" element={<SinglePost />} />
+          <Route exact path="/profile/:id" element={<Profile />} />
+          {/* private routes */}
+          <Route exact path="/dashboard/:id" element={<Dashboard />} />
+          <Route exact path="/updateprofile/:id" element={<UpdateProfile />} />
+        </Routes>
+      </div>
+      {showModal && signupUser ? (
+        <SignupModal onCloseClick={closeModal} />
+      ) : null}
+      {showModal && signinUser ? (
+        <SigninModal onCloseClick={closeModal} />
+      ) : null}
+      {showModal && addPost ? <NewPostModal onCloseClick={closeModal} /> : null}
     </div>
   );
 };

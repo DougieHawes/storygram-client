@@ -1,5 +1,63 @@
 @import "../../variables.scss";
 
+.button,
+.input {
+  border: none;
+  font-size: 21px;
+  height: 28px;
+  margin: 3px 0;
+  width: 100%;
+}
+
+.button {
+  background-color: $colour1;
+  color: $colour2;
+  cursor: pointer;
+}
+
+.input {
+  padding: 0 1%;
+}
+
+.input1 {
+  border-bottom: 1px solid $colour1;
+}
+
+.input2 {
+  height: 210px;
+}
+
 .layout {
   padding: $padding1;
+}
+
+.modal-container {
+  background-color: rgba($color: $colour1, $alpha: 0.42);
+  height: 100vh;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  .modal {
+    background-color: rgba($color: $colour2, $alpha: 1);
+    height: 60vh;
+    margin-left: 50%;
+    margin-top: 10vh;
+    min-height: 297px;
+    min-width: 210px;
+    padding: $padding2;
+    transform: translateX(-50%);
+    width: 60%;
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      .modal-title {
+        font-size: 35px;
+      }
+      .modal-close {
+        cursor: pointer;
+        font-size: 42px;
+      }
+    }
+  }
 }

@@ -1,17 +1,21 @@
 @import "variables.scss";
 
 * {
+  box-sizing: border-box;
   color: $colour1;
   font-family: $font1;
   margin: 0;
+  outline: none;
   text-decoration: none;
 }
 
 .app {
   background-color: $colour2;
-  max-height: 100vh;
   min-height: 100vh;
   overflow: hidden;
+  .routes {
+    padding-top: 60px;
+  }
 }
 
 h1,
