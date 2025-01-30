@@ -1,6 +1,14 @@
 import axios from "axios";
 
 import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { Route2 } from "../../utils/routes";
+
+import { Button1 } from "../../utils/buttons";
+import { Input1 } from "../../utils/inputs";
+
+import "../style.scss";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -19,10 +27,7 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/user/signup",
-        formData
-      );
+      await axios.post("http://localhost:5000/user/signup", formData);
 
       setFormData({
         email: "",
@@ -37,35 +42,40 @@ const SignUp = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          name="email"
-          onChange={handleChange}
-          placeholder="enter email"
-          value={email}
-        />
-        <input
-          name="username"
-          onChange={handleChange}
-          placeholder="enter username"
-          value={username}
-        />
-        <input
-          name="password"
-          onChange={handleChange}
-          placeholder="enter password"
-          value={password}
-        />
-        <input
-          name="confirmPassword"
-          onChange={handleChange}
-          placeholder="enter confirmPassword"
-          value={confirmPassword}
-        />
-        <button type="submit">submit</button>
-      </form>
-    </div>
+    <Route2
+      content={
+        <div>
+          <form className="form" onSubmit={handleSubmit}>
+            <Link to="/signin">signin</Link>
+            <Input1
+              name="email"
+              onChange={handleChange}
+              placeholder="enter email"
+              value={email}
+            />
+            <Input1
+              name="username"
+              onChange={handleChange}
+              placeholder="enter username"
+              value={username}
+            />
+            <Input1
+              name="password"
+              onChange={handleChange}
+              placeholder="enter password"
+              value={password}
+            />
+            <Input1
+              name="confirmPassword"
+              onChange={handleChange}
+              placeholder="enter confirmPassword"
+              value={confirmPassword}
+            />
+            <Button1 text="submit" />
+          </form>
+        </div>
+      }
+    />
   );
 };
 
