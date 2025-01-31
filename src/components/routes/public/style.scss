@@ -1,0 +1,31 @@
+@import "../../../style/variables";
+
+.home {
+  background-image: url("../../../images/home-placeholder.jpg");
+  background-position: center;
+  background-size: cover;
+  .home-text-container {
+    margin-left: 50%;
+    margin-top: 15%;
+    min-width: 280px;
+    transform: translate(-50%);
+    width: 42%;
+    .home-text-border {
+      border-style: double;
+      border-width: 2px;
+      height: 100%;
+      margin: 14px;
+      padding: 14px;
+      .home-text {
+        * {
+          text-align: center;
+        }
+        .home-title {
+        }
+      }
+    }
+  }
+  .home-text-container-lightmode {
+    background-color: $colour1;
+  }
+}

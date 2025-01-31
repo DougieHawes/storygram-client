@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { Route2 } from "../../utils/routes";
 
-import { Button1 } from "../../utils/buttons";
+import { Button2 } from "../../utils/buttons";
 import { Input1 } from "../../utils/inputs";
 
 import "../style.scss";
@@ -59,7 +59,7 @@ const SignIn = () => {
               placeholder="enter password"
               value={password}
             />
-            <Button1 text="submit" />
+            <Button2 text="submit" />
           </form>
         </div>
       }

@@ -1,4 +1,25 @@
-.button,
+.button {
+}
+.button1 {
+  background-color: rgba($color: #000000, $alpha: 0);
+  border-width: 2px;
+  font-size: 14px;
+  margin-left: 50%;
+  padding: 6px;
+  transform: translateX(-50%);
+  width: 140px;
+}
+.button2 {
+  width: 100%;
+}
+
 .input {
   width: 100%;
+}
+
+.route {
+  height: 90vh;
+  .route-container {
+    height: 100%;
+  }
 }
