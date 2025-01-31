@@ -2,10 +2,10 @@ import { useParams } from "react-router-dom";
 
 import { Route1 } from "../../utils/routes";
 
-const Gallery = () => {
+const Story = () => {
   const params = useParams();
 
-  return <Route1 content={<div>gallery {params.galleryid}</div>} />;
+  return <Route1 content={<div>Story {params.storyid}</div>} />;
 };
 
-export default Gallery;
+export default Story;

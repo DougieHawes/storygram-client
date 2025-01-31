@@ -2,12 +2,14 @@ import { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 
 import Home from "./components/routes/public/Home";
+import Stories from "./components/routes/public/Story";
+import Story from "./components/routes/public/Story";
 
 import SignUp from "./components/routes/auth/SignUp";
 import SignIn from "./components/routes/auth/SignIn";
 
+import CreateStory from "./components/routes/private/CreateStory";
 import Dashboard from "./components/routes/private/Dashboard";
-import Gallery from "./components/routes/private/Gallery";
 
 import "./style/style.scss";
 
@@ -33,10 +35,12 @@ const App = () => {
       </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/:galleryid" element={<Gallery />} />
+        <Route path="/stories" element={<Stories />} />
+        <Route path="/stories/:storyid" element={<Story />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/create-story" element={<CreateStory />} />
       </Routes>
     </div>
   );

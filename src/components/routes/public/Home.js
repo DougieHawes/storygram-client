@@ -14,7 +14,7 @@ const Home = () => {
               <div className="home-text">
                 <h1 className="home-title heading">StoryGram</h1>
                 <p className="home-subtitle subtitle">start/continue here...</p>
-                <Button1 text="open" />
+                <Button1 to="/dashboard" text="open" />
               </div>
             </div>
           </div>

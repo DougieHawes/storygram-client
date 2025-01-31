@@ -1,10 +1,14 @@
+import { Link } from "react-router-dom";
+
 import "./style.scss";
 
-export const Button1 = ({ text }) => {
+export const Button1 = ({ to, text }) => {
   return (
-    <button className="button button1" type="submit">
-      {text}
-    </button>
+    <Link to={to}>
+      <button className="button button1" type="submit">
+        {text}
+      </button>
+    </Link>
   );
 };
 
