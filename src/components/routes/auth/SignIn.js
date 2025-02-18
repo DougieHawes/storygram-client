@@ -8,15 +8,15 @@ import { Route2 } from "../../utils/routes";
 import { Button2 } from "../../utils/buttons";
 import { Input1 } from "../../utils/inputs";
 
-import "../style.scss";
+import "./style.scss";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    email: "",
+    username: "",
     password: "",
   });
 
-  const { email, password } = formData;
+  const { username, password } = formData;
 
   const navigate = useNavigate();
 
@@ -39,6 +39,7 @@ const SignIn = () => {
 
       localStorage.setItem("token", response.data.token);
 
+      window.location.reload();
       navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
@@ -48,22 +49,25 @@ const SignIn = () => {
   return (
     <Route2
       content={
-        <div>
+        <div className="auth-page">
           <form className="form" onSubmit={handleSubmit}>
-            <Link to="/signup">signup</Link>
             <Input1
-              name="email"
+              name="username"
               onChange={handleChange}
-              placeholder="enter email"
-              value={email}
+              placeholder="enter username"
+              value={username}
             />
             <Input1
               name="password"
               onChange={handleChange}
               placeholder="enter password"
+              type="password"
               value={password}
             />
-            <Button2 text="submit" />
+            <Button2 text="continue your story" />
+            <Link className="form-link" to="/signup">
+              signup
+            </Link>
           </form>
         </div>
       }

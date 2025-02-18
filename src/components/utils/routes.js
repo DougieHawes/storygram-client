@@ -1,7 +1,8 @@
 import { jwtDecode } from "jwt-decode";
-
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+import checkToken from "../../middleware/checkToken";
 
 import "./style.scss";
 
@@ -18,10 +19,7 @@ export const Route2 = ({ content }) => {
 
       if (token) {
         try {
-          const decoded = jwtDecode(token);
-          const currentTime = Date.now() / 1000;
-
-          if (decoded.exp > currentTime) {
+          if (checkToken()) {
             navigate("/dashboard");
           }
         } catch (error) {

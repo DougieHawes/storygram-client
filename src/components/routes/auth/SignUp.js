@@ -5,10 +5,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { Route2 } from "../../utils/routes";
 
-import { Button1 } from "../../utils/buttons";
+import { Button2 } from "../../utils/buttons";
 import { Input1 } from "../../utils/inputs";
 
-import "../style.scss";
+import "./style.scss";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -51,9 +51,8 @@ const SignUp = () => {
   return (
     <Route2
       content={
-        <div>
+        <div className="auth-page">
           <form className="form" onSubmit={handleSubmit}>
-            <Link to="/signin">signin</Link>
             <Input1
               name="email"
               onChange={handleChange}
@@ -78,7 +77,10 @@ const SignUp = () => {
               placeholder="enter confirmPassword"
               value={confirmPassword}
             />
-            <Button1 text="submit" />
+            <Button2 text="begin your story" />
+            <Link className="form-link" to="/signin">
+              signin
+            </Link>
           </form>
         </div>
       }

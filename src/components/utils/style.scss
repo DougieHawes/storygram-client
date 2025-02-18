@@ -1,4 +1,7 @@
+@import "../../style/variables";
+
 .button {
+  font-size: $fontSizeBody;
 }
 .button1 {
   background-color: rgba($color: #000000, $alpha: 0);
@@ -10,15 +13,40 @@
   width: 140px;
 }
 .button2 {
-  width: 100%;
+  background-color: $colour3;
+  bottom: 42px;
+  cursor: pointer;
+  font-family: $font3;
+  right: 4%;
+  padding: 3px 14px;
+  position: absolute;
 }
 
-.input {
-  width: 100%;
+.input-label {
+  font-family: $font1;
+  font-weight: 800;
+}
+.input-container {
+  display: flex;
+  margin-bottom: $margin1;
+  .input {
+    background-color: rgba($color: #000000, $alpha: 0);
+    border-bottom-width: 2px;
+    font-size: $fontSizeBody;
+    min-height: 42px;
+    padding: 0 2%;
+    width: 100%;
+  }
+  .password-toggle {
+    cursor: pointer;
+    max-height: 42px;
+    min-width: 42px;
+    overflow: hidden;
+  }
 }
 
 .route {
-  height: 90vh;
+  height: $route-height;
   .route-container {
     height: 100%;
   }

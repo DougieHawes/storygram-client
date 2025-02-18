@@ -5,6 +5,7 @@ const SignOutButton = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem("token");
+    window.location.reload();
     navigate("/");
   };
 

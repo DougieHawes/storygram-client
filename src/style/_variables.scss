@@ -1,3 +1,12 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: transparent !important;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0) inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 @font-face {
   font-family: "libre-baskerville";
   src: url("../fonts/LibreBaskerville-Regular.ttf");
@@ -15,9 +24,6 @@ $colour1: #ffc0cb;
 $colour2: #a0e7e5;
 $colour3: #d4a5a5;
 $colour4: #ffd97d;
-$colour5: #4a4a4a;
-$colour6: #5e5e5e;
-$colour7: #5a89e6;
 
 $colour5: #000000;
 $colour6: #eaeaea;
@@ -27,3 +33,9 @@ $colour8: #0a84ff;
 $font1: "libre-baskerville";
 $font2: "montserrat";
 $font3: "pacifico";
+
+$fontSizeBody: 21px;
+
+$margin1: 14px;
+
+$route-height: 90vh;

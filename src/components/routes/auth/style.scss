@@ -1,0 +1,21 @@
+@import "../../../style/variables";
+
+.auth-page {
+  background-image: url("../../../images/home-placeholder.jpg");
+  background-position: center;
+  background-size: cover;
+  .form {
+    background-color: $colour1;
+    position: relative;
+    max-width: 600px;
+    min-height: $route-height;
+    min-width: 300px;
+    padding: 140px 2% 0 2%;
+    width: 50%;
+    .form-link {
+      bottom: 21px;
+      position: absolute;
+      right: 4%;
+    }
+  }
+}
