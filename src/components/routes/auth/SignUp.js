@@ -53,28 +53,18 @@ const SignUp = () => {
       content={
         <div className="auth-page">
           <form className="form" onSubmit={handleSubmit}>
-            <Input1
-              name="email"
-              onChange={handleChange}
-              placeholder="enter email"
-              value={email}
-            />
-            <Input1
-              name="username"
-              onChange={handleChange}
-              placeholder="enter username"
-              value={username}
-            />
+            <Input1 name="email" onChange={handleChange} value={email} />
+            <Input1 name="username" onChange={handleChange} value={username} />
             <Input1
               name="password"
               onChange={handleChange}
-              placeholder="enter password"
+              type="password"
               value={password}
             />
             <Input1
               name="confirmPassword"
               onChange={handleChange}
-              placeholder="enter confirmPassword"
+              type="password"
               value={confirmPassword}
             />
             <Button2 text="begin your story" />
