@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Route2 } from "../../utils/routes";
 
@@ -12,13 +12,15 @@ import "../style.scss";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
-    email: "dougiehawes@hotmail.com",
-    username: "DougieHawes",
-    password: "Wittgenstein42",
-    confirmPassword: "Wittgenstein42",
+    email: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
   });
 
   const { email, username, password, confirmPassword } = formData;
+
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,7 +29,10 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/user/signup", formData);
+      await axios.post(
+        `${process.env.REACT_APP_SERVER_URL}/user/signup`,
+        formData
+      );
 
       setFormData({
         email: "",
@@ -35,6 +40,8 @@ const SignUp = () => {
         password: "",
         confirmPassword: "",
       });
+
+      navigate("/signin");
     } catch (error) {
       console.log(error.message);
     } finally {

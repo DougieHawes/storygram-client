@@ -1,7 +1,7 @@
 import axios from "axios";
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Route2 } from "../../utils/routes";
 
@@ -12,11 +12,13 @@ import "../style.scss";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    email: "dougiehawes@hotmail.com",
-    password: "Wittgenstein42",
+    email: "",
+    password: "",
   });
 
   const { email, password } = formData;
+
+  const navigate = useNavigate();
 
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -26,7 +28,7 @@ const SignIn = () => {
       e.preventDefault();
 
       const response = await axios.post(
-        "http://localhost:5000/user/signin",
+        `${process.env.REACT_APP_SERVER_URL}/user/signin`,
         formData
       );
 
@@ -36,6 +38,8 @@ const SignIn = () => {
       });
 
       localStorage.setItem("token", response.data.token);
+
+      navigate("/dashboard");
     } catch (error) {
       console.log(error.message);
     }

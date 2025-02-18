@@ -1,0 +1,18 @@
+@import "../../style/variables";
+
+.header {
+  display: flex;
+  height: 65px;
+  justify-content: space-between;
+  .title-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    .header-title {
+    }
+    .header-subtitle {
+      margin-top: -16px;
+    }
+  }
+}

@@ -1,7 +1,10 @@
 import { Route3 } from "../../utils/routes";
 
-import { Button2 } from "../../utils/buttons";
 import { Link } from "react-router-dom";
+
+import SignOutButton from "../../layout/SignOutButton";
+
+import "./style.scss";
 
 const Dashboard = () => {
   return (
@@ -9,6 +12,7 @@ const Dashboard = () => {
       content={
         <div>
           <Link to="/create-story">create-story</Link>
+          <SignOutButton />
         </div>
       }
     />
