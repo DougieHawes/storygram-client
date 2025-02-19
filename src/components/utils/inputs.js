@@ -3,12 +3,12 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 import "./style.scss";
 
-export const Input1 = ({ name, onChange, type = "text", value }) => {
+export const Input1 = ({ label, name, onChange, type = "text", value }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
     <>
-      <label className="input-label">{name}</label>
+      <label className="input-label">{label}</label>
       <div className="input-container">
         <input
           className="input"

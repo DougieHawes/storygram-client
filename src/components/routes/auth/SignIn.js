@@ -12,11 +12,11 @@ import "./style.scss";
 
 const SignIn = () => {
   const [formData, setFormData] = useState({
-    username: "",
+    authorName: "",
     password: "",
   });
 
-  const { username, password } = formData;
+  const { authorName, password } = formData;
 
   const navigate = useNavigate();
 
@@ -33,7 +33,7 @@ const SignIn = () => {
       );
 
       setFormData({
-        email: "",
+        authorName: "",
         password: "",
       });
 
@@ -52,15 +52,15 @@ const SignIn = () => {
         <div className="auth-page">
           <form className="form" onSubmit={handleSubmit}>
             <Input1
-              name="username"
+              label="author name"
+              name="authorName"
               onChange={handleChange}
-              placeholder="enter username"
-              value={username}
+              value={authorName}
             />
             <Input1
+              label="password"
               name="password"
               onChange={handleChange}
-              placeholder="enter password"
               type="password"
               value={password}
             />

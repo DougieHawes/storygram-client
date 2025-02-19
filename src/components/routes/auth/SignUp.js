@@ -12,13 +12,13 @@ import "./style.scss";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
+    authorName: "",
     email: "",
-    username: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { email, username, password, confirmPassword } = formData;
+  const { authorName, email, password, confirmPassword } = formData;
 
   const navigate = useNavigate();
 
@@ -29,14 +29,17 @@ const SignUp = () => {
     e.preventDefault();
 
     try {
-      await axios.post(
+      console.log(formData);
+      const response = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/author/signup`,
         formData
       );
 
+      console.log(response.data);
+
       setFormData({
         email: "",
-        username: "",
+        authorName: "",
         password: "",
         confirmPassword: "",
       });
@@ -53,15 +56,27 @@ const SignUp = () => {
       content={
         <div className="auth-page">
           <form className="form" onSubmit={handleSubmit}>
-            <Input1 name="email" onChange={handleChange} value={email} />
-            <Input1 name="username" onChange={handleChange} value={username} />
             <Input1
+              label="author name"
+              name="authorName"
+              onChange={handleChange}
+              value={authorName}
+            />
+            <Input1
+              label="email"
+              name="email"
+              onChange={handleChange}
+              value={email}
+            />
+            <Input1
+              label="password"
               name="password"
               onChange={handleChange}
               type="password"
               value={password}
             />
             <Input1
+              label="confirm password"
               name="confirmPassword"
               onChange={handleChange}
               type="password"
