@@ -30,7 +30,7 @@ const SignUp = () => {
 
     try {
       await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/user/signup`,
+        `${process.env.REACT_APP_SERVER_URL}/author/signup`,
         formData
       );
 

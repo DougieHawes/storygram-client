@@ -28,7 +28,7 @@ const SignIn = () => {
       e.preventDefault();
 
       const response = await axios.post(
-        `${process.env.REACT_APP_SERVER_URL}/user/signin`,
+        `${process.env.REACT_APP_SERVER_URL}/author/signin`,
         formData
       );
 
